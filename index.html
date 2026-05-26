@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Dodge Game: Neon Survival</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-wrapper">
+        <!-- In-game HUD -->
+        <div id="hud">
+            <div class="hud-left">
+                <div class="score-display">Score: <span id="current-score">0</span></div>
+                <div id="active-powerups">
+                    <div class="powerup-indicator" id="ind-speed">⚡ <span id="time-speed">0</span>s</div>
+                    <div class="powerup-indicator" id="ind-shield">🛡️ <span id="time-shield">0</span>s</div>
+                    <div class="powerup-indicator" id="ind-slow">❄️ <span id="time-slow">0</span>s</div>
+                </div>
+            </div>
+            <div class="ai-indicator" id="ai-status">
+                <div class="ai-dot"></div>
+                <span id="ai-text">AI Active</span>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="900" height="562"></canvas>
+        <div id="controls-hint">Use Arrow Keys or WASD to Move • Avoid Red & Purple</div>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="ui-screen">
+            <h1>Neon Dodge</h1>
+            <div class="subtitle">Evade the AI • Dodge Obstacles • Grab Power-ups</div>
+            <div class="button-group">
+                <button class="btn-easy" onclick="startGame('easy')">Easy</button>
+                <button class="btn-medium" onclick="startGame('medium')">Medium</button>
+                <button class="btn-hard" onclick="startGame('hard')">Hard</button>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="game-over-screen" class="ui-screen hidden">
+            <h1 style="color: var(--danger); text-shadow: 0 0 30px rgba(225, 29, 72, 0.6);">Terminated</h1>
+            <div class="subtitle" id="survival-time" style="color: #f8fafc; font-size: 1.6rem; margin-bottom: 10px;">AI Survived for 0 seconds</div>
+            <div class="subtitle" id="final-score" style="margin-top: 0; color: var(--primary); font-weight: bold;">Final Score: 0</div>
+
+            <div id="ai-taunt" class="ai-taunt-box"></div>
+
+            <button class="btn-restart" onclick="showStartScreen()">Reboot System</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
