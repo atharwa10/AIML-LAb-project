@@ -4,7 +4,7 @@ This is a simple browser game I built for my AIML Lab project. The whole idea is
 
 ## Live Link
 You can play it online here: 
-**[INSERT YOUR GITHUB PAGES LINK HERE]**
+** https://atharwa10.github.io/AIML-LAb-project/**
 
 ---
 
